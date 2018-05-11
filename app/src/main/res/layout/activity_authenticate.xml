@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.teodora.myrisdemo.AuthenticateActivity">
-
+    android:orientation="vertical"
+    tools:context=".AuthenticateActivity">
     <TextureView
-        android:id="@+id/textureView"
+        android:id="@+id/texture"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/btnCapture"
-    />
-
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnScanIris"
+        android:layout_alignParentTop="true"/>
     <Button
-        android:id="@+id/btnCapture"
+        android:id="@+id/btnScanIris"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Scan Iris"
-        />
+        android:background="@color/colorPrimary"
+        android:textColor="#FFFFFF"
+        android:text="SCAN"/>
 </RelativeLayout>

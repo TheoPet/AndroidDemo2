@@ -15,12 +15,7 @@ public class RegisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        scanIrisButton = (Button) findViewById(R.id.regBtnID);
+        scanIrisButton = (Button) findViewById(R.id.btnScanIris);
     }
 
-    public void scanIris(View v )
-    {
-        Intent intent = new Intent(RegisterActivity.this, TransactionActivity.class);
-        startActivity(intent);
-    }
 }

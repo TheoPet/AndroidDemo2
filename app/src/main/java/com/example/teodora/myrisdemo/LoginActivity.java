@@ -11,44 +11,36 @@ import android.widget.TextView;
 public class LoginActivity extends AppCompatActivity {
 
     private Button login;
-    private EditText userName;
-    private EditText password;
+    private EditText pinNum;
     private TextView info;
-
-    private int counter = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        login = (Button) findViewById(R.id.logBtnID);
+        login = (Button) findViewById(R.id.loginID);
 
-        userName = (EditText) findViewById(R.id.userNameID);
-        password = (EditText) findViewById(R.id.passID);
-        info = (TextView)findViewById(R.id.textViewID);
-
-        info.setText("Number of remaining login attempts: 3");
+        pinNum = (EditText) findViewById(R.id.pinID);
+       // info = (TextView)findViewById(R.id.textViewID);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validate(userName.getText().toString(),password.getText().toString());
+                validate(pinNum.getText().toString());
             }
         });
     }
 
-    private void validate (String _userName, String _password)
+    public void validate(String pinNum)
     {
-        if((_userName.equals("Nikola")) && (_password.equals("Basta")))
+        if(!pinNum.equals("1234"))
+            login.setEnabled(false);
+        else
         {
-            Intent intent = new Intent(LoginActivity.this,TransactionActivity.class);
+            Intent intent = new Intent(LoginActivity.this, TransactionCompleteActivity.class);
             startActivity(intent);
-        }else
-        {
-            counter--;
-            info.setText("Number of remaining login attempts: " + String.valueOf(counter));
-            if(counter == 0)
-                login.setEnabled(false);
         }
+
     }
+
 }
